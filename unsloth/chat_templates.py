@@ -1987,6 +1987,8 @@ def train_on_responses_only(
                 pass
                 j += 1
             pass
+            labels = labels[:n]
+            labels += [-100] * (n - len(labels))
             all_labels.append(labels)
         pass
         return { "labels" : all_labels }
